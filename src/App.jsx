@@ -3,18 +3,24 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login";
+import Signup from "./components/signup";
 
-import "./App.css";
+// import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
+    <Router>
       <div>
-        <Login />
+        <div className="w-full flex flex-col items-center justify-center overflow-hidden h-screen bg-gray-500 p-0 m-0">
+          <section>
+            <Routes>
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/" element={<Login />} />
+            </Routes>
+          </section>
+        </div>
       </div>
-    </>
+    </Router>
   );
 }
 

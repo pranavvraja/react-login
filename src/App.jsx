@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import Signup from "./components/signup";
+import Welcome from "./components/welcome";
 
 // import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route path="/signup" element={<Signup />} />
               <Route path="/" element={<Login />} />
+              <Route path="/welcome" element={<Welcome />} />
             </Routes>
           </section>
         </div>

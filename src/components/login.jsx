@@ -28,13 +28,15 @@ const login = () => {
     <>
       <main>
         <div className="w-96 p-8 text-1xl justify-center flex flex-col items-start bg-slate-200 border-spacing-3 h-80 rounded-xl shadow-xl ">
-          <h1 className="text-3xl text-slate-700 items-center px-28">Login</h1>
-          <form>
-            <label htmlFor="email" className="text-slate-800 p-2">
+          <h1 className="text-3xl text-slate-700 items-center px-28 pt-8">
+            Login
+          </h1>
+          <form className="p-4">
+            <label htmlFor="email" className="text-slate-800 p-1">
               E-mail:
             </label>
             <input
-              className="w-full bg-slate-100 shadow-lg text-slate-900"
+              className="w-full bg-slate-100 shadow-lg text-slate-900 p-1 mb-4"
               type="email"
               id="email"
               name="email"
@@ -43,11 +45,11 @@ const login = () => {
               onChange={(e) => setEmail(e.target.value)}
             ></input>
 
-            <label htmlFor="password" className="text-slate-800 p-2">
+            <label htmlFor="password" className="text-slate-800 p-1 ">
               Password:
             </label>
             <input
-              className="w-full bg-slate-100 shadow-lg text-slate-900"
+              className="w-full bg-slate-100 shadow-lg text-slate-900 p-1 mb-2"
               type="password"
               name="password"
               id="password"

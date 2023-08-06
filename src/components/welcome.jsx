@@ -4,7 +4,7 @@ import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const welcome = (user) => {
+const welcome = () => {
   const navigate = useNavigate();
   const PageTitle = "Welcome";
 
@@ -26,7 +26,7 @@ const welcome = (user) => {
       }
     });
   }, []);
-  const email = user.email;
+  // const email = user.email;
 
   const logout = () => {
     signOut(auth)
@@ -43,8 +43,10 @@ const welcome = (user) => {
   return (
     <>
       <div className="w-96 h-auto p-10 text-1xl justify-center flex flex-col items-start bg-slate-200 border-spacing-3 rounded-xl shadow-xl ">
-        <h1 className="text-slate-700 items-center">{`Welcome, ${email}`} </h1>
-
+        <h1 className="text-4xl text-slate-700 items-center p-4 pl-0">
+          Welcome{" "}
+        </h1>
+        <p className="text-sm p-2 pl-0">Succesfully logged in</p>
         <button
           onClick={logout}
           className="text-1xl text-slate-100 bg-slate-900 rounded-lg px-4 py-2 my-4"

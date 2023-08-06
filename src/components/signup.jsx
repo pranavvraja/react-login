@@ -28,7 +28,15 @@ const signup = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         console.log(errorCode);
-        window.alert(errorMessage);
+        if (errorCode === "auth/email-already-in-use") {
+          window.alert("Email already in use.");
+        } else if (errorCode === "auth/invalid-email") {
+          window.alert("Invalid email.");
+        } else if (errorCode === "auth/weak-password") {
+          window.alert("Weak password.");
+        } else {
+          window.alert(errorMessage);
+        }
       });
   };
 

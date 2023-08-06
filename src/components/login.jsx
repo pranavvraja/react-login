@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 const login = () => {
   const navigate = useNavigate();
+  const pageTitle = "Login";
+
+  useEffect(() => {
+    document.title = pageTitle;
+  }, []);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,6 +26,13 @@ const login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        if (errorCode === "auth/wrong-password") {
+          window.alert("Wrong password.");
+        } else if (errorCode === "auth/user-not-found") {
+          window.alert("User not found.");
+        } else {
+          window.alert(errorMessage);
+        }
       });
   };
 

@@ -6,8 +6,10 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 const welcome = (user) => {
   const navigate = useNavigate();
+  const PageTitle = "Welcome";
 
   useEffect(() => {
+    document.title = PageTitle;
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
